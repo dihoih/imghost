@@ -41,7 +41,7 @@ function shorturl() {
       // add to urlList on the page
       addUrlToList(keyPhrase, valueLongURL)
 
-      document.getElementById("result").innerHTML = window.location.protocol + "//" + window.location.host + "/" + res.key;
+      document.getElementById("result").innerHTML = "[upl-image-preview url=" + window.location.protocol + "//" + window.location.host + "/" + res.key + "]";
     } else {
       document.getElementById("result").innerHTML = res.error;
     }
@@ -54,7 +54,7 @@ function shorturl() {
     alert("Unknow error. Please retry!");
     console.log(err);
     document.getElementById("addBtn").disabled = false;
-    document.getElementById("addBtn").innerHTML = 'Shorten it';
+    document.getElementById("addBtn").innerHTML = '提交';
   })
 }
 
