@@ -20,7 +20,7 @@ function shorturl() {
   document.getElementById('keyPhrase').value = document.getElementById('keyPhrase').value.replace(/\s/g, "-");
 
   document.getElementById("addBtn").disabled = true;
-  document.getElementById("addBtn").innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>请稍等...';
+  document.getElementById("addBtn").innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
   fetch(apiSrv, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -41,7 +41,7 @@ function shorturl() {
       // add to urlList on the page
       addUrlToList(keyPhrase, valueLongURL)
 
-      document.getElementById("result").innerHTML = window.location.protocol + "//" + window.location.host + "//" + res.key;
+      document.getElementById("result").innerHTML = window.location.protocol + "//" + window.location.host + "/" + res.key;
     } else {
       document.getElementById("result").innerHTML = res.error;
     }
