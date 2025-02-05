@@ -20,7 +20,7 @@ function shorturl() {
   document.getElementById('keyPhrase').value = document.getElementById('keyPhrase').value.replace(/\s/g, "-");
 
   document.getElementById("addBtn").disabled = true;
-  document.getElementById("addBtn").innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
+  document.getElementById("addBtn").innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>稍等...';
   fetch(apiSrv, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -204,7 +204,7 @@ function deleteShortUrl(delKeyPhrase) {
       // 加载localStorage
       loadUrlList()
 
-      document.getElementById("result").innerHTML = "Delete Successful"
+      document.getElementById("result").innerHTML = "删除成功！"
     } else {
       document.getElementById("result").innerHTML = res.error;
     }
